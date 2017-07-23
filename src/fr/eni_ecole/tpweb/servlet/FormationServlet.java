@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.eni_ecole.tpweb.bo.Formation;
+import fr.eni_ecole.tpweb.bean.Formation;
 import fr.eni_ecole.tpweb.dao.DAOFormation;
 
 /**

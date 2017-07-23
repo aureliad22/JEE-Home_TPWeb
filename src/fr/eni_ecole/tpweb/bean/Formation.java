@@ -3,8 +3,9 @@
  * @date 19 juil. 2017
  * @version Home_TPWeb V1.0
  */
-package fr.eni_ecole.tpweb.bo;
+package fr.eni_ecole.tpweb.bean;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
@@ -12,8 +13,13 @@ import java.sql.Date;
  * @date 19 juil. 2017
  * @version Home_TPWeb V1.0
  */
-public class Formation {
+public class Formation implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private int id;
 	private String libelle;
 	private String description;

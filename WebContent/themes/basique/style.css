@@ -1,1 +1,105 @@
 @CHARSET "UTF-8";
+
+* {
+	color: teal;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+#page {
+    width: 750px;
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+#navigation {
+	border: 1px solid teal;	
+    font-size: 14px;
+	float: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left : 5px;	
+    margin-top:20px;
+	margin-bottom: 15px;
+	width:200px;
+}
+
+#navigation a {
+    color: teal;
+    display: block;
+}
+
+#navigation form {
+    margin-top:5px;	
+}
+
+#titre {
+	border-bottom: 5px solid teal;
+	height: 75px;
+}
+
+#content {
+	width: 500px;
+	padding: 10px;
+	text-align: justify;
+	min-height: 150px;
+}
+
+#footer {
+    text-align : center; 
+    font-size : 10px;
+    margin-top : 20px; 
+    padding-top : 10px; 
+    border-top : 1px dashed teal;
+    width: 750px;
+} 
+
+#footer a {
+	text-decoration: none;
+}
+
+#footer a:hover {
+	text-decoration: underline;
+}
+
+.formation {
+    width: 500px;
+}
+
+.formation h2, #navigation a:hover {
+    color: white;
+    background-color: teal;
+}
+
+.formation p, li {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.formationIndiv {
+    padding: 10px;
+    border: 1px dotted teal;
+    margin-bottom: 5px;	
+}
+
+form.connexion {
+    padding-bottom: 40px;
+}
+
+form.connexion label {
+    float: left;
+    min-width: 130px;
+    text-align: left;
+    font-weight: bold;
+}
+
+form.connexion > .bloc_identifiant, form.connexion > .bloc_motdepasse {
+    padding-bottom: 5px;
+}
+
+.champtexte {
+    border-style: solid;
+}
+
+#seconnecter {
+    margin-left: 100px;
+}
