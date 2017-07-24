@@ -4,6 +4,23 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  
+<!-- Session -->
+  <session-config>
+    <session-timeout>10</session-timeout>
+  </session-config>
+  
+<!-- Ressource -->
+  <resource-ref>
+    <description>
+		Référence a la ressource BDD pour le pool de connexion
+	</description>
+    <res-ref-name>jdbc/dsHomeTPWeb</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  
+<!-- Servlets -->
   <servlet>
     <description></description>
     <display-name>FormationServlet</display-name>
@@ -14,24 +31,38 @@
     <servlet-name>FormationServlet</servlet-name>
     <url-pattern>/Formations</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
-    <display-name>AdminServlet</display-name>
-    <servlet-name>AdminServlet</servlet-name>
-    <servlet-class>fr.eni_ecole.tpweb.servlet.AdminServlet</servlet-class>
+    <display-name>FrontServlet</display-name>
+    <servlet-name>FrontServlet</servlet-name>
+    <servlet-class>fr.eni_ecole.tpweb.servlet.FrontServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AdminServlet</servlet-name>
-    <url-pattern>/AdmCnx</url-pattern>
+    <servlet-name>FrontServlet</servlet-name>
+    <url-pattern>/FrontServlet</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
-    <display-name>StagiaireServlet</display-name>
-    <servlet-name>StagiaireServlet</servlet-name>
-    <servlet-class>fr.eni_ecole.tpweb.servlet.StagiaireServlet</servlet-class>
+    <display-name>AnimCnxServlet</display-name>
+    <servlet-name>AnimCnxServlet</servlet-name>
+    <servlet-class>fr.eni_ecole.tpweb.servlet.AnimCnxServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>StagiaireServlet</servlet-name>
-    <url-pattern>/StagiaireCnxServlet</url-pattern>
+    <servlet-name>AnimCnxServlet</servlet-name>
+    <url-pattern>/AccesAnimateur</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>StagiaireCnxServlet</display-name>
+    <servlet-name>StagiaireCnxServlet</servlet-name>
+    <servlet-class>fr.eni_ecole.tpweb.servlet.StagiaireCnxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StagiaireCnxServlet</servlet-name>
+    <url-pattern>/AccesStagiaire</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

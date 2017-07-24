@@ -27,18 +27,6 @@ public class Animateur extends User{
 	/**
 	 * Constructeur.
 	 * 
-	 * @param email
-	 * @param motdepasse
-	 */
-	public Animateur(String email, String motdepasse) {
-		super();
-		this.setEmail(email);
-		this.setMotdepasse(motdepasse);
-	}
-
-	/**
-	 * Constructeur.
-	 * 
 	 * @param nom
 	 * @param prenom
 	 * @param email
@@ -48,6 +36,8 @@ public class Animateur extends User{
 		super();
 		this.setNom(nom);
 		this.setPrenom(prenom);
+		this.setEmail(email);
+		this.setMotdepasse(motdepasse);
 	}
 	
 	/**

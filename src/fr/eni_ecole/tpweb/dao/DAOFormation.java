@@ -25,7 +25,7 @@ import fr.eni_ecole.tpweb.tools.ManipDate;
  */
 public class DAOFormation implements IDAOBase<Formation, Integer> {
 
-	private static final String RQ_INSERT = "INSERT INTO formations (libelle, description, debut, fin) VALUES(?,?,?,?)";
+	private static final String RQ_INSERT = "INSERT INTO formations (libelle, description, debut, fin) VALUES (?,?,?,?)";
 	private static final String RQ_UPDATE = "UPDATE formations SET (libelle=?, description=?, debut=?, fin=?) WHERE id = ?";
 	private static final String RQ_DELETE = "DELETE FROM formations WHERE id=?";
 	private static final String RQ_ALL = "SELECT * FROM formations";

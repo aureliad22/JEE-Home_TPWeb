@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<Resource
+		name="jdbc/dsHomeTPWeb"
+		auth="Container"
+		type="javax/sql/Datasource"
+		username="root"
+		password=""
+		driverClassName="org.gjt.mm.mysql.Driver"
+		url="jdbc:mysql://localhost:3306/TPJavaEE_GestionFormations"
+	/>
+</Context>

@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@include file="/header.jsp"%>
+<%@include file="/WEB-INF/header.jspf"%>
 
 		<div id="titre">
 			<h1>TP Web - Accueil</h1>
 		</div>
 	
-<%@include file="/navigation.jsp"%>
+<%@include file="/WEB-INF/navigation.jspf"%>
 
 		<div id="content">
 	        <p>Bienvenue sur TP Web !</p>
@@ -14,4 +14,4 @@
 	        <p>Pour faire une recherche sur Google, utilisez le formulaire de recherche.</p>	
 		</div>
 
-<%@include file="/footer.jsp"%>
+<%@include file="/WEB-INF/footer.jspf"%>

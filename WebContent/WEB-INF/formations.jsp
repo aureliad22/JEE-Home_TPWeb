@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="java.util.List, fr.eni_ecole.tpweb.bean.Formation, fr.eni_ecole.tpweb.tools.ManipDate" %>
-<%@include file="/header.jsp"%>
+<%@include file="./header.jspf"%>
 
 	<div id="titre">
 		<h1>TP Web - Liste de formations</h1>
 	</div>
 
-<%@include file="/navigation.jsp"%>
+<%@include file="./navigation.jspf"%>
 
 	<div id="formations">
 	<% 
@@ -27,4 +27,4 @@
 	%>
 	
 	</div>
-<%@include file="/footer.jsp"%>
+<%@include file="./footer.jspf"%>

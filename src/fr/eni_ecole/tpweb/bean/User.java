@@ -33,32 +33,7 @@ public abstract class User implements Serializable {
 	}
 
 	/**
-	 * Méthode en charge de retourner vrai si login donné = email enregistré et
-	 * password donné = mot de passe enregistré
-	 * 
-	 * @param login:
-	 *            email à verifier
-	 * @param password:
-	 *            mot de passe à vérifier
-	 * @return true si login = email et password = mot de passe
-	 */
-	public boolean validation(String login, String password) {
-		boolean valid = false;
-		if (login == null) {
-			System.out.println("Renseignez l'identifiant");
-		} else if (password == null) {
-			System.out.println("Mot de passe obligatoire");
-		} else {
-			if (login.equals(getEmail()) && password.equals(getMotdepasse())) {
-				valid = true;
-			}
-		}
-		return valid;
-	}
-
-	/**
 	 * Getter pour id.
-	 * 
 	 * @return the id
 	 */
 	public int getId() {
@@ -67,9 +42,7 @@ public abstract class User implements Serializable {
 
 	/**
 	 * Setter pour id.
-	 * 
-	 * @param id
-	 *            the id to set
+	 * @param id the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
@@ -77,7 +50,6 @@ public abstract class User implements Serializable {
 
 	/**
 	 * Getter pour nom.
-	 * 
 	 * @return the nom
 	 */
 	public String getNom() {
@@ -86,17 +58,14 @@ public abstract class User implements Serializable {
 
 	/**
 	 * Setter pour nom.
-	 * 
-	 * @param nom
-	 *            the nom to set
+	 * @param nom the nom to set
 	 */
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
 	/**
-	 * Getter pour prenom.
-	 * 
+	 * Getter pour prenom.	 
 	 * @return the prenom
 	 */
 	public String getPrenom() {
@@ -104,10 +73,8 @@ public abstract class User implements Serializable {
 	}
 
 	/**
-	 * Setter pour prenom.
-	 * 
-	 * @param prenom
-	 *            the prenom to set
+	 * Setter pour prenom.	  
+	 * @param prenom the prenom to set
 	 */
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
@@ -115,7 +82,6 @@ public abstract class User implements Serializable {
 
 	/**
 	 * Getter pour email.
-	 * 
 	 * @return the email
 	 */
 	public String getEmail() {
@@ -124,9 +90,7 @@ public abstract class User implements Serializable {
 
 	/**
 	 * Setter pour email.
-	 * 
-	 * @param email
-	 *            the email to set
+	 * @param email the email to set
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -134,7 +98,6 @@ public abstract class User implements Serializable {
 
 	/**
 	 * Getter pour motdepasse.
-	 * 
 	 * @return the motdepasse
 	 */
 	public String getMotdepasse() {
@@ -143,7 +106,6 @@ public abstract class User implements Serializable {
 
 	/**
 	 * Setter pour motdepasse.
-	 * 
 	 * @param motdepasse the motdepasse to set
 	 */
 	public void setMotdepasse(String motdepasse) {

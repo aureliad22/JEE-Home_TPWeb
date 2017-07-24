@@ -9,6 +9,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 import com.mysql.jdbc.Driver;
 
 
@@ -21,12 +26,26 @@ import com.mysql.jdbc.Driver;
  */
 public class DBConnection {
 	
-	public static Connection getConnection() throws SQLException {
+	public static Connection getConnection() throws Exception {
+		Connection cnx = null;
+		
+		try {
+			Context jndi = new InitialContext();
+			DataSource ds = (DataSource) jndi.lookup("java:comp/env/jdbc/TPJavaEE_GestionFormations");
+			cnx = ds.getConnection();
+		} catch (NamingException e) {
+			e.printStackTrace();
+			throw new Exception("L'accès à la base est impossible pour le moment");
+		}
+		return cnx;
+	}
+	
+	public static Connection getConnectionWithoutPool() throws SQLException {
 			// Chargement du pilote
 			DriverManager.registerDriver(new Driver());
 			// Ouverture de la connexion
 			Connection connection = null;
-			connection = DriverManager.getConnection("jdbc:mysql://Server/TPJavaEE_GestionFormations", "username", "password");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/TPJavaEE_GestionFormations", "root", "");
 			return connection;
 		}
 }
