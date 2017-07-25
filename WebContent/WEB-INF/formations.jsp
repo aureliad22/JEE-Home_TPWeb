@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@page import="java.util.List, fr.eni_ecole.tpweb.bean.Formation, fr.eni_ecole.tpweb.tools.ManipDate" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="./header.jspf"%>
 
 	<div id="titre">
@@ -10,21 +10,19 @@
 <%@include file="./navigation.jspf"%>
 
 	<div id="formations">
-	<% 
-		List<Formation> listeFormations = (List<Formation>)request.getAttribute("formations");
-		for(Formation f : listeFormations){
-	%>
-		<div class="formationIndiv">
-			<h2>&nbsp;<%=f.getLibelle()%></h2>
-			<p><%=f.getDescription()%></p>
-			<ul>
-				<li>Date de début : <%=ManipDate.dateAuFormatLong(f.getDateDebut())%></li>
-				<li>Date de fin : <%=ManipDate.dateAuFormatLong(f.getDateFin())%></li>
-			</ul>
-		</div>		
-	<% 
-		} 
-	%>
+	<c:forEach items="${formations}" var="formation">
+		   <div class="formationIndiv">
+	            <h2>&nbsp;${formation.libelle}</h2>
+	            <p>
+	                ${formation.description}>
+	            </p>
+	            <ul>
+	                <li>Date de début :<fmt:formatDate type="date" pattern="dd/MM/yyyy" value="debut"/></li>
+	                <li>Date de fin : <fmt:formatDate type="date" pattern="dd/MM/yyyy" value="fin"/></li>
+	            </ul>
+	        </div>  
+	</c:forEach>
+
 	
 	</div>
 <%@include file="./footer.jspf"%>

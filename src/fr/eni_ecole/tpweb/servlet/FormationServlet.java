@@ -11,13 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.eni_ecole.tpweb.bean.Formation;
 import fr.eni_ecole.tpweb.dao.DAOFormation;
+import fr.eni_ecole.tpweb.services.ServiceFormations;
 
 /**
  * Servlet implementation class FormationServlet
  */
 public class FormationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private ServiceFormations serviceFormations;   
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -25,28 +26,20 @@ public class FormationServlet extends HttpServlet {
         super();
     }
 
+    /**
+     * {@inheritDoc}
+     * @see javax.servlet.GenericServlet#init()
+     */
+    @Override
+    public void init() throws ServletException {
+    	serviceFormations = new ServiceFormations();
+    }
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		processRequest(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//doGet(request, response);
-		processRequest(request, response);
-	}
-
-	/**
-	 * Méthode en charge de traiter la requête et de fournir la réponse. 
-	 * @param request
-	 * @param response
-	 */
-	private void processRequest(HttpServletRequest request, HttpServletResponse response) {
 		RequestDispatcher rd = null;
 		List<Formation> listeFormations;
 		try {
@@ -57,6 +50,36 @@ public class FormationServlet extends HttpServlet {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if(request.getParameter("supprimer") != null){
+			supprimerFormation(request, response);
+		}else if(request.getParameter("modifier") != null){
+			modifierFormation(request, response);
+		}
+	}
+
+	/**
+	 * Méthode en charge de supprimer la formation
+	 * @param request
+	 * @param response
+	 */
+	private void supprimerFormation(HttpServletRequest request,	HttpServletResponse response) {
+		
+	}
+	
+	/**
+	 * Méthode en charge de 
+	 * @param request
+	 * @param response
+	 */
+	private void modifierFormation(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
 	}
 }
